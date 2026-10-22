@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Javia Ventures | Websites for roofing contractors</title>
+<meta name="description" content="Websites for US roofing contractors that turn Google searches into booked inspections. We build your new homepage first, free. You decide if it's worth paying for.">
+<meta property="og:title" content="Javia Ventures | Websites for roofing contractors">
+<meta property="og:description" content="We build your new homepage first, free. You decide if it's worth paying for.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF7; --ink:#1F2428; --muted:#5E6870; --steel:#DDE2E6; --steel-d:#C3CAD0;
+    --chalk:#1E6BE6; --chalk-d:#1556BE; --chalk-soft:#E8F0FD; --signal:#F7C948; --white:#fff;
+    --head:"Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+    --body:"Public Sans", system-ui, -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--head);line-height:1.04;letter-spacing:-.005em;font-weight:700}
+  a{color:var(--chalk-d)}
+  img{max-width:100%;display:block}
+  :focus-visible{outline:3px solid var(--chalk);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px/1 var(--body);padding:16px 24px;border-radius:8px;text-decoration:none;border:2px solid var(--chalk);background:var(--chalk);color:#fff;cursor:pointer}
+  .btn:hover{background:var(--chalk-d);border-color:var(--chalk-d)}
+  .btn.line{background:transparent;color:var(--ink);border-color:var(--steel-d)}
+  .btn.line:hover{border-color:var(--ink)}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:10;background:rgba(250,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--steel)}
+  .nav{display:flex;align-items:center;gap:28px;height:68px}
+  .logo{font:700 24px/1 var(--head);white-space:nowrap;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:9px;margin-right:auto}
+  .logo img{width:34px;height:34px}
+  .nav a.lnk{color:var(--muted);text-decoration:none;font-weight:500;font-size:15px}
+  .nav a.lnk:hover{color:var(--ink)}
+  .nav .btn{padding:11px 16px;font-size:15px;white-space:nowrap}
+  .nav .short{display:none}
+
+  /* hero */
+  .hero{padding:72px 0 88px}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:56px;align-items:center}
+  .hero h1{font-size:clamp(42px,5.6vw,72px);font-weight:800;margin-bottom:22px;max-width:13ch}
+  .chalkline{display:block;height:10px;width:min(340px,80%);margin:0 0 26px}
+  .chalkline path{stroke:var(--chalk);stroke-width:3.5;fill:none;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:snap .9s .35s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes snap{to{stroke-dashoffset:0}}
+  .hero p.lead{font-size:20px;color:var(--muted);max-width:33ch;margin-bottom:32px}
+  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .hero small{display:block;margin-top:16px;color:var(--muted);font-size:14px}
+
+  /* before/after */
+  .ba{position:relative}
+  .frame{border:1px solid var(--steel-d);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 30px 60px -30px rgba(31,36,40,.35)}
+  .bar{height:34px;background:#EEF1F3;display:flex;align-items:center;gap:6px;padding:0 12px;border-bottom:1px solid var(--steel)}
+  .bar i{width:10px;height:10px;border-radius:50%;background:var(--steel-d)}
+  .bar span{margin-left:12px;font-size:12px;color:var(--muted);background:#fff;border-radius:5px;padding:3px 10px;flex:1;max-width:260px}
+  .stage{position:relative;height:380px;overflow:hidden}
+  .pane{position:absolute;inset:0}
+  .after{clip-path:inset(0 0 0 var(--split,50%))}
+  .handle{position:absolute;top:0;bottom:0;left:var(--split,50%);width:3px;margin-left:-1.5px;background:var(--chalk);pointer-events:none}
+  .handle::after{content:"";position:absolute;top:50%;left:50%;width:40px;height:40px;transform:translate(-50%,-50%);border-radius:50%;background:var(--chalk);box-shadow:0 0 0 5px rgba(30,107,230,.2);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E");background-size:22px;background-position:center;background-repeat:no-repeat}
+  .ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;z-index:2;opacity:0;cursor:ew-resize;margin:0}
+  .ba input[type=range]:focus-visible + .handle::after{box-shadow:0 0 0 5px var(--signal)}
+  .tags{display:flex;justify-content:space-between;margin-top:12px;font-size:14px;color:var(--muted)}
+  .tags b{color:var(--ink);font-weight:600}
+
+  /* old site mock */
+  .old{background:#e9e4d8;font-family:"Times New Roman",Times,serif;color:#333;padding:0}
+  .old .ohead{background:#6b6b6b;color:#fff;padding:14px 18px;font-size:22px;font-weight:bold;text-align:center}
+  .old .onav{background:#9a9a9a;color:#fff;font-size:11px;text-align:center;padding:4px;letter-spacing:.02em}
+  .old .obody{display:grid;grid-template-columns:1fr 1.6fr;gap:14px;padding:16px 18px}
+  .old .opic{height:130px;background:repeating-linear-gradient(45deg,#c9c1b0 0 8px,#bdb5a3 8px 16px);border:3px ridge #999}
+  .old h4{font-size:15px;color:#7a1f1f;margin-bottom:6px}
+  .old p{font-size:10.5px;line-height:1.35;margin-bottom:6px}
+  .old .ofoot{position:absolute;left:0;right:0;bottom:0;background:#6b6b6b;color:#ddd;font-size:9px;text-align:center;padding:6px}
+  /* new site mock */
+  .new{background:linear-gradient(165deg,#22303d,#141b22);color:#fff;padding:26px 28px 26px calc(20% + 24px)}
+  .new .nhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+  .new .nlogo{font:700 16px var(--head)}
+  .new .ncall{background:var(--signal);color:#1f2428;font-size:12px;font-weight:700;padding:7px 11px;border-radius:5px}
+  .new .ngrid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start}
+  .new h4{font:800 30px/1.02 var(--head);margin-bottom:10px}
+  .new p{font-size:12.5px;color:#b9c3cc;margin-bottom:14px}
+  .new .stars{font-size:12px;color:#d6dde3}
+  .new .stars b{color:var(--signal);letter-spacing:1px}
+  .new .nform{background:#fff;color:var(--ink);border-radius:8px;padding:14px}
+  .new .nform div{font:700 14px var(--head);margin-bottom:8px}
+  .new .nform span{display:block;height:24px;border:1px solid var(--steel);border-radius:4px;margin-bottom:7px}
+  .new .nform em{display:block;background:var(--chalk);color:#fff;font-style:normal;font-size:11px;font-weight:700;text-align:center;padding:7px;border-radius:4px}
+  .lead-pop{position:absolute;right:-18px;bottom:46px;background:#fff;border:1px solid var(--steel);border-radius:10px;padding:12px 14px 12px 12px;display:flex;gap:10px;align-items:flex-start;box-shadow:0 18px 40px -18px rgba(31,36,40,.45);font-size:13px;max-width:250px;z-index:3}
+  .lead-pop .dot{flex:none;width:10px;height:10px;border-radius:50%;background:var(--signal);margin-top:5px;box-shadow:0 0 0 4px rgba(247,201,72,.3)}
+  .lead-pop b{display:block;font-size:13.5px}
+  .lead-pop span{color:var(--muted)}
+
+  /* sections */
+  section{padding:96px 0}
+  .sh{max-width:640px;margin-bottom:48px}
+  .sh h2{font-size:clamp(32px,3.6vw,46px);margin-bottom:14px}
+  .sh p{color:var(--muted);font-size:18px}
+  .rule{border-top:1px solid var(--steel)}
+
+  /* checks */
+  .checks .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px}
+  .checklist{list-style:none;border-top:2px solid var(--ink)}
+  .checklist li{display:grid;grid-template-columns:28px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--steel)}
+  .checklist svg{width:22px;height:22px;margin-top:3px;color:var(--chalk)}
+  .checklist b{display:block;font-size:17px}
+  .checklist span{color:var(--muted);font-size:15.5px}
+  .fact{margin-top:32px;padding:22px 24px;background:var(--chalk-soft);border-radius:10px}
+  .fact strong{display:block;font:800 40px/1 var(--head);color:var(--chalk-d);margin-bottom:6px}
+  .fact p{font-size:15px;color:var(--ink)}
+  .fact cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px}
+
+  /* get */
+  .get{background:var(--ink);color:#fff}
+  .get .sh p{color:#aab4bd}
+  .getgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 48px}
+  .getgrid h3{font-size:24px;margin-bottom:8px;padding-top:16px;border-top:2px solid var(--chalk)}
+  .getgrid p{color:#b9c3cc;font-size:16px}
+
+  /* steps */
+  .steps{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;counter-reset:s;border-top:1px solid var(--steel-d)}
+  .steps li{position:relative;padding:30px 28px 0 0;counter-increment:s}
+  .steps li::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--chalk);color:#fff;font:700 18px var(--head);position:absolute;top:-19px;left:0}
+  .steps h3{font-size:26px;margin:14px 0 8px}
+  .steps p{color:var(--muted);max-width:32ch}
+
+  /* pricing */
+  .plans{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:start}
+  .plan{border:1px solid var(--steel-d);border-radius:14px;padding:36px;background:#fff}
+  .plan.main{border:2px solid var(--chalk)}
+  .plan h3{font-size:28px}
+  .plan .for{color:var(--muted);margin:4px 0 22px}
+  .price{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+  .price strong{font:800 58px/1 var(--head)}
+  .price span{color:var(--muted)}
+  .terms{font-size:14.5px;color:var(--muted);margin-bottom:24px}
+  .plan ul{list-style:none;margin-bottom:28px}
+  .plan li{padding:9px 0 9px 30px;position:relative;border-top:1px solid var(--steel)}
+  .plan li::before{content:"";position:absolute;left:4px;top:15px;width:12px;height:7px;border-left:2.5px solid var(--chalk);border-bottom:2.5px solid var(--chalk);transform:rotate(-45deg)}
+  .plan .btn{width:100%}
+  .pnote{margin-top:22px;color:var(--muted);font-size:15px}
+
+
+  /* work */
+  .work{background:#fff}
+  .wgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 32px;list-style:none}
+  .wshot{display:block;border:1px solid var(--steel-d);border-radius:10px;overflow:hidden;background:#EEF1F3;text-decoration:none}
+  .wshot .wbar{height:22px;display:flex;align-items:center;gap:5px;padding:0 9px;border-bottom:1px solid var(--steel)}
+  .wshot .wbar i{width:7px;height:7px;border-radius:50%;background:var(--steel-d)}
+  .wshot .wimg{aspect-ratio:16/10;position:relative}
+  .wshot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  .wshot .wph{position:absolute;inset:0;display:none;place-items:center;font:700 22px var(--head);color:var(--muted);background:linear-gradient(160deg,#F3F5F7,#E3E8EC)}
+  .wshot.noimg img{display:none}.wshot.noimg .wph{display:grid}
+  .wshot:hover{border-color:var(--ink)}
+  .work h3{font-size:24px;margin:18px 0 4px}
+  .work .wplace{font-size:14px;color:var(--muted);margin-bottom:8px}
+  .work li p{font-size:15.5px;color:var(--ink)}
+  .work .wlink{display:inline-block;margin-top:8px;font-size:15px;font-weight:600}
+
+  /* who + faq */
+  .who .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px}
+  .who p{margin-bottom:16px;max-width:52ch}
+  details{border-bottom:1px solid var(--steel)}
+  details:first-of-type{border-top:2px solid var(--ink)}
+  summary{list-style:none;cursor:pointer;padding:18px 36px 18px 0;font-weight:600;position:relative}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"";position:absolute;right:6px;top:24px;width:10px;height:10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);transition:transform .2s}
+  details[open] summary::after{transform:rotate(-135deg);top:28px}
+  details p{padding:0 0 18px;color:var(--muted)}
+
+  /* demo form */
+  .ask{background:var(--chalk);color:#fff}
+  .ask .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+  .ask h2{font-size:clamp(34px,4vw,52px);margin-bottom:16px}
+  .ask p.sub{color:#dbe7fb;font-size:18px;max-width:36ch}
+  form.demo{background:#fff;color:var(--ink);border-radius:14px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  form.demo label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+  form.demo input{width:100%;font:inherit;font-size:16px;padding:12px 13px;border:1px solid var(--steel-d);border-radius:7px;background:#fff;color:var(--ink)}
+  form.demo input:focus{outline:none;border-color:var(--chalk);box-shadow:0 0 0 3px var(--chalk-soft)}
+  form.demo .full{grid-column:1/-1}
+  form.demo .btn{width:100%;padding:17px}
+  form.demo small{grid-column:1/-1;color:var(--muted);font-size:13.5px}
+  .formmsg{grid-column:1/-1;font-size:15px;font-weight:600;color:var(--chalk-d)}
+
+  footer{padding:40px 0;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media (max-width:960px){
+    .hero .wrap,.checks .wrap,.who .wrap,.ask .wrap{grid-template-columns:1fr;gap:44px}
+    .getgrid,.wgrid{grid-template-columns:1fr 1fr}
+    .plans{grid-template-columns:1fr}
+    .lead-pop{right:10px}
+    .nav a.lnk{display:none}
+  }
+  @media (max-width:640px){
+    .nav .long{display:none}.nav .short{display:inline}
+    .logo{font-size:21px}
+    body{font-size:16px}
+    .wrap{padding:0 16px}
+    .hero{padding:44px 0 64px}
+    section{padding:72px 0}
+    .stage{height:330px}
+    .old .obody{grid-template-columns:1fr}.old .opic{height:70px}
+    .new{padding:18px 16px 18px calc(20% + 16px)}.new .ngrid{grid-template-columns:1fr}.new .nform{display:none}.new .nhead{margin-bottom:22px}
+    .getgrid,.steps,.wgrid{grid-template-columns:1fr}
+    .steps{border-top:0;gap:44px}
+    .steps li{border-top:1px solid var(--steel-d)}
+    .plan{padding:26px}
+    form.demo{grid-template-columns:1fr;padding:22px}
+    .lead-pop{position:static;margin-top:14px;max-width:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .chalkline path{animation:none;stroke-dashoffset:0}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#" aria-label="Javia Ventures home"><img src="logo-dark.png" alt="" width="34" height="34">Javia Ventures</a>
+    <a class="lnk" href="#work">Our work</a>
+    <a class="lnk" href="#how">How it works</a>
+    <a class="lnk" href="#pricing">Pricing</a>
+    <a class="lnk" href="#faq">Questions</a>
+    <a class="btn" href="#demo"><span class="long">Get my free demo</span><span class="short">Free demo</span></a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>We'll build your new homepage first.</h1>
+      <svg class="chalkline" viewBox="0 0 340 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 90 3, 200 8, 338 4"/></svg>
+      <p class="lead">Websites for roofing contractors, built to turn homeowners on their phones into booked inspections. See yours before you pay anything.</p>
+      <div class="ctas">
+        <a class="btn" href="#demo">Get my free demo</a>
+        <a class="btn line" href="sample/">See a sample</a>
+      </div>
+      <small>Free demo in 48 hours. No card, no call required.</small>
+    </div>
+
+    <div class="ba" style="--split:20%">
+      <div class="frame">
+        <div class="bar"><i></i><i></i><i></i><span>loneoakroofing.com</span></div>
+        <div class="stage">
+          <div class="pane old" aria-hidden="true">
+            <div class="ohead">Welcome to Lone Oak Roofing!!</div>
+            <div class="onav">HOME | ABOUT US | SERVICES | GALLERY | CONTACT US | LINKS</div>
+            <div class="obody">
+              <div class="opic"></div>
+              <div>
+                <h4>Quality Roofing Since Forever</h4>
+                <p>We are a family owned and operated roofing company serving the greater area. We offer many services including residential roofing, commercial roofing, repairs and more. Please see our services page for more information about the services we offer to our valued customers.</p>
+                <p>For an estimate please email us using the contact page or call during business hours Monday through Friday.</p>
+              </div>
+            </div>
+            <div class="ofoot">© 2016 Lone Oak Roofing. All rights reserved. Best viewed in Internet Explorer.</div>
+          </div>
+          <div class="pane new after" aria-hidden="true">
+            <div class="nhead"><span class="nlogo">Lone Oak Roofing</span><span class="ncall">Call (555) 014-2290</span></div>
+            <div class="ngrid">
+              <div>
+                <h4>Roof leaking? We'll be out this week.</h4>
+                <p>Repairs, full replacements and storm damage inspections, with photos you can send your insurer.</p>
+                <div class="stars"><b>★★★★★</b> 4.9 from 212 Google reviews</div>
+              </div>
+              <div class="nform"><div>Free inspection</div><span></span><span></span><em>Book my inspection</em></div>
+            </div>
+          </div>
+          <input type="range" min="0" max="100" value="20" aria-label="Drag to compare the old website with the new one">
+          <div class="handle"></div>
+        </div>
+      </div>
+      <div class="lead-pop" role="img" aria-label="Example notification: new inspection request">
+        <i class="dot"></i>
+        <div><b>New inspection request</b><span>Maria G., hail damage, wants a call today</span></div>
+      </div>
+      <div class="tags"><span><b>Before:</b> what we usually find</span><span><b>After:</b> what we build</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="checks rule">
+  <div class="wrap">
+    <div class="sh">
+      <h2>Most roofing sites lose the call before it happens.</h2>
+      <p>Homeowners with a leak search on their phone, open three sites, and call the first one that makes it easy. We check every site we work on for the things that decide that moment.</p>
+      <div class="fact">
+        <strong>$228</strong>
+        <p>Average cost per lead for roofing on paid search, the highest of 16 home-service trades. Every visitor your site loses is an expensive one.</p>
+        <cite>Source: WebTonic, Roofing demand generation statistics, 2026</cite>
+      </div>
+    </div>
+    <ul class="checklist">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Tap-to-call on every screen</b><span>One thumb, one tap, and your phone rings.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>A quote form that texts you instantly</b><span>Requests reach your phone in seconds, not your inbox on Monday.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Loads in under 3 seconds on a phone</b><span>Slow pages lose visitors before they see your name.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Your Google reviews, front and center</b><span>The trust you've already earned, shown where it counts.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>A page for every town you serve</b><span>So you show up when someone searches "roof repair" plus their city.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Secure, current and yours</b><span>HTTPS, an up-to-date design, and a site you own outright.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="get">
+  <div class="wrap">
+    <div class="sh">
+      <h2>What's in the build</h2>
+      <p>Everything a roofing company needs to get found and get called. Nothing you have to manage yourself.</p>
+    </div>
+    <div class="getgrid">
+      <div><h3>Up to 5 pages</h3><p>Home, services, storm damage, about and contact, written for homeowners in your area.</p></div>
+      <div><h3>Instant lead alerts</h3><p>Every form request arrives by text and email with the homeowner's name, number and problem.</p></div>
+      <div><h3>Google Business Profile tune-up</h3><p>Categories, services, photos and links fixed so your Maps listing matches your new site.</p></div>
+      <div><h3>Local search basics</h3><p>Titles, descriptions and service-area pages set up so Google knows where you work.</p></div>
+      <div><h3>Hosting and security</h3><p>Fast hosting, HTTPS and backups, set up and looked after for you.</p></div>
+      <div><h3>Your photos, your words</h3><p>We use your real jobs and reviews. No stock roofs, no made-up testimonials.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sh">
+      <h2>How it works</h2>
+      <p>You see the finished direction before you spend a dollar.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Free demo in 48 hours</h3><p>Tell us your company name. We build your new homepage and send you a private link.</p></li>
+      <li><h3>Shape it together</h3><p>Like it? We gather your photos, services and towns, and refine every page over email.</p></li>
+      <li><h3>Live in 14 days</h3><p>We launch, connect your domain and Google profile, and start sending you leads.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="pricing" class="rule">
+  <div class="wrap">
+    <div class="sh">
+      <h2>Simple pricing</h2>
+      <p>One build price, one optional monthly plan. No long contracts.</p>
+    </div>
+    <div class="plans">
+      <div class="plan main">
+        <h3>Website build</h3>
+        <p class="for">Everything above, designed, written and launched.</p>
+        <div class="price"><strong>$1,500</strong><span>one time</span></div>
+        <p class="terms">Half to start, half at launch. The demo is free either way.</p>
+        <ul>
+          <li>Up to 5 pages, mobile first</li>
+          <li>Tap-to-call and instant lead alerts</li>
+          <li>Google Business Profile tune-up</li>
+          <li>Local search setup</li>
+          <li>You own the site and domain</li>
+        </ul>
+        <a class="btn" href="#demo">Get my free demo</a>
+      </div>
+      <div class="plan">
+        <h3>Care plan</h3>
+        <p class="for">For contractors who'd rather never think about the website again.</p>
+        <div class="price"><strong>$249</strong><span>per month</span></div>
+        <p class="terms">Starts after launch. Cancel any time.</p>
+        <ul>
+          <li>Hosting, security and backups</li>
+          <li>Text and photo updates, sent by email</li>
+          <li>A new town or service page each month</li>
+          <li>Monthly report: calls, forms and visitors</li>
+        </ul>
+        <a class="btn line" href="#demo">Ask about the care plan</a>
+      </div>
+    </div>
+    <p class="pnote">Need more pages or something custom? Tell us in the form and we'll quote it before any work starts.</p>
+  </div>
+</section>
+
+<section class="work rule" id="work">
+  <div class="wrap">
+    <div class="sh">
+      <h2>Work we've shipped</h2>
+      <p>Websites and apps we've built for businesses in Tamil Nadu, India. Different trades, same job: get the customer to call, book or order.</p>
+    </div>
+    <ul class="wgrid">
+      <li>
+        <a class="wshot" href="https://www.racksmadurai.com" target="_blank" rel="noopener" aria-label="Open AK Racks Madurai website">
+          <div class="wbar"><i></i><i></i><i></i></div>
+          <div class="wimg"><img src="work/racks.jpg" alt="Homepage of AK Racks Madurai" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">racksmadurai.com</span></div>
+        </a>
+        <h3>AK Racks Madurai</h3>
+        <div class="wplace">Rack manufacturer, Madurai</div>
+        <p>Quote buttons on every page and a page for each district they serve, the same setup we build for roofers covering several towns.</p>
+        <a class="wlink" href="https://www.racksmadurai.com" target="_blank" rel="noopener">Visit racksmadurai.com</a>
+      </li>
+      <li>
+        <a class="wshot" href="https://vpresidencyperambalur.in/" target="_blank" rel="noopener" aria-label="Open VP Residency website">
+          <div class="wbar"><i></i><i></i><i></i></div>
+          <div class="wimg"><img src="work/vpresidency.jpg" alt="Homepage of VP Residency" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">vpresidencyperambalur.in</span></div>
+        </a>
+        <h3>VP Residency</h3>
+        <div class="wplace">Hotel, Perambalur</div>
+        <p>Room availability and booking form, tap-to-call and WhatsApp, so guests book directly instead of through a middleman.</p>
+        <a class="wlink" href="https://vpresidencyperambalur.in/" target="_blank" rel="noopener">Visit vpresidencyperambalur.in</a>
+      </li>
+      <li>
+        <a class="wshot" href="https://www.vksweddingevents.in/" target="_blank" rel="noopener" aria-label="Open VKS Wedding Events website">
+          <div class="wbar"><i></i><i></i><i></i></div>
+          <div class="wimg"><img src="work/vks.jpg" alt="Homepage of VKS Wedding Events" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">vksweddingevents.in</span></div>
+        </a>
+        <h3>VKS Wedding Events</h3>
+        <div class="wplace">Event decorators, Trichy</div>
+        <p>Gallery with a before-and-after slider and a consultation booking page. Great for showing finished roofs.</p>
+        <a class="wlink" href="https://www.vksweddingevents.in/" target="_blank" rel="noopener">Visit vksweddingevents.in</a>
+      </li>
+      <li>
+        <a class="wshot" href="https://jayple.in/" target="_blank" rel="noopener" aria-label="Open Jayple website">
+          <div class="wbar"><i></i><i></i><i></i></div>
+          <div class="wimg"><img src="work/jayple.jpg" alt="Homepage of Jayple" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">jayple.in</span></div>
+        </a>
+        <h3>Jayple</h3>
+        <div class="wplace">Salon booking app, Trichy</div>
+        <p>Our own product: instant booking, online payments and a partner dashboard. Over 1,000 downloads on Google Play.</p>
+        <a class="wlink" href="https://jayple.in/" target="_blank" rel="noopener">Visit jayple.in</a>
+      </li>
+      <li>
+        <a class="wshot" href="https://idealneetacademy.in/" target="_blank" rel="noopener" aria-label="Open Ideal NEET Academy website">
+          <div class="wbar"><i></i><i></i><i></i></div>
+          <div class="wimg"><img src="work/idealneet.jpg" alt="Homepage of Ideal NEET Academy" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">idealneetacademy.in</span></div>
+        </a>
+        <h3>Ideal NEET Academy</h3>
+        <div class="wplace">Coaching institute, Trichy</div>
+        <p>Enquiry form, Google reviews on the page and WhatsApp enrollment, built to turn visitors into calls.</p>
+        <a class="wlink" href="https://idealneetacademy.in/" target="_blank" rel="noopener">Visit idealneetacademy.in</a>
+      </li>
+      <li>
+        <a class="wshot" href="https://www.bhaibiryanigodown.in/" target="_blank" rel="noopener" aria-label="Open Bhai Biryani Godown website">
+          <div class="wbar"><i></i><i></i><i></i></div>
+          <div class="wimg"><img src="work/bhaibiryani.jpg" alt="Homepage of Bhai Biryani Godown" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">bhaibiryanigodown.in</span></div>
+        </a>
+        <h3>Bhai Biryani Godown</h3>
+        <div class="wplace">Restaurant, 3 locations</div>
+        <p>Menu, ratings for each branch and one-tap WhatsApp ordering for a business with several locations.</p>
+        <a class="wlink" href="https://www.bhaibiryanigodown.in/" target="_blank" rel="noopener">Visit bhaibiryanigodown.in</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="who rule">
+  <div class="wrap">
+    <div>
+      <div class="sh" style="margin-bottom:24px"><h2>Who you'd work with</h2></div>
+      <p>Javia Ventures is a small web studio run by Jayaprakash. We've built websites, apps and marketing for hotels, restaurants, manufacturers, event companies and schools, and now focus on one trade: roofing.</p>
+      <p>Our team works from India, which is how we keep pricing fair. You'll deal with the same person from demo to launch, by email or a scheduled call, and get a reply within one US business day.</p>
+    </div>
+    <div id="faq">
+      <details><summary>What if I don't like the demo?</summary><p>Then you don't owe us anything. The demo is free and there's no obligation.</p></details>
+      <details><summary>Do I own the website?</summary><p>Yes. The site and the domain are yours. If you ever leave, we hand everything over.</p></details>
+      <details><summary>Do I need the care plan?</summary><p>No. It's optional. Without it, you get the files and we help you set up your own hosting.</p></details>
+      <details><summary>Can you keep my current domain?</summary><p>Yes. We point your existing domain to the new site, so your email and Google listing stay the same.</p></details>
+      <details><summary>Which areas do you work in?</summary><p>Roofing contractors anywhere in the US. We write pages for the towns you actually serve.</p></details>
+      <details><summary>What do you need from me?</summary><p>For the demo, just your company name. For the full site: photos of your work, your services, and the towns you cover.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="ask" id="demo">
+  <div class="wrap">
+    <div>
+      <h2>Get your free homepage demo</h2>
+      <p class="sub">We'll build it and send you a private link within 48 hours. No card, no sales call.</p>
+    </div>
+    <form class="demo" id="demoForm" novalidate>
+      <div><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div><label for="f-co">Company name</label><input id="f-co" name="company" autocomplete="organization" required></div>
+      <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="full"><label for="f-site">Current website or city (optional)</label><input id="f-site" name="website" placeholder="e.g. lonestarroofing.com or Dallas, TX"></div>
+      <div class="full"><button class="btn" type="submit">Send me my free demo</button></div>
+      <p class="formmsg" id="formMsg" role="status" aria-live="polite"></p>
+      <small>We only use your details to send your demo. No newsletters.</small>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Javia Ventures</span>
+    <span><a href="mailto:jayaprakash@getjaviaventures.com" id="mailLink">jayaprakash@getjaviaventures.com</a></span>
+  </div>
+</footer>
+
+<script>
+  // ---- Settings: change after you buy the domain ----
+  const CONTACT_EMAIL = "jayaprakash@getjaviaventures.com";
+  // Optional: paste a Formspree endpoint (formspree.io, free) to receive forms without opening email.
+  const FORM_ENDPOINT = "";
+
+  document.getElementById("mailLink").href = "mailto:" + CONTACT_EMAIL;
+  document.getElementById("mailLink").textContent = CONTACT_EMAIL;
+
+  // Before/after slider
+  const ba = document.querySelector(".ba"), range = ba.querySelector("input[type=range]");
+  const setSplit = v => { range.value = v; ba.style.setProperty("--split", v + "%"); };
+  range.addEventListener("input", () => setSplit(range.value));
+  // One intro sweep: show the old site, then reveal the new one.
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let t0 = null; setSplit(85);
+    const ease = x => 1 - Math.pow(1 - x, 3);
+    const step = t => { t0 ??= t; const x = Math.min((t - t0) / 1400, 1);
+      setSplit(Math.round(85 - 65 * ease(x))); if (x < 1) requestAnimationFrame(step); };
+    setTimeout(() => requestAnimationFrame(step), 900);
+  }
+
+  // Demo request form
+  const form = document.getElementById("demoForm"), msg = document.getElementById("formMsg");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(form));
+    if (!d.name || !d.company || !/^\S+@\S+\.\S+$/.test(d.email)) {
+      msg.style.color = "#B42318";
+      msg.textContent = "Add your name, company and a valid email so we know where to send the demo.";
+      return;
+    }
+    msg.style.color = "";
+    if (FORM_ENDPOINT) {
+      try {
+        const r = await fetch(FORM_ENDPOINT, {method: "POST", headers: {"Accept": "application/json"}, body: new FormData(form)});
+        if (!r.ok) throw new Error();
+        form.reset();
+        msg.textContent = "Request sent. Your demo link will arrive within 48 hours.";
+      } catch {
+        msg.style.color = "#B42318";
+        msg.textContent = "That didn't go through. Email us at " + CONTACT_EMAIL + " instead.";
+      }
+      return;
+    }
+    const body = `Name: ${d.name}\nCompany: ${d.company}\nEmail: ${d.email}\nPhone: ${d.phone || "-"}\nWebsite/city: ${d.website || "-"}`;
+    location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Free demo request: " + d.company)}&body=${encodeURIComponent(body)}`;
+    msg.textContent = "Your email app opened with the request filled in. Press send and we'll get started.";
+  });
+</script>
+</body>
+</html>
