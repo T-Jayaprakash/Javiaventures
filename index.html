@@ -8,6 +8,41 @@
 <meta property="og:title" content="Javia Ventures | Websites for roofing contractors">
 <meta property="og:description" content="We build your new homepage first, free. You decide if it's worth paying for.">
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="canonical" href="https://getjaviaventures.com/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1F2428">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getjaviaventures.com/">
+<meta property="og:site_name" content="Javia Ventures">
+<meta property="og:image" content="https://getjaviaventures.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Javia Ventures | Websites for roofing contractors">
+<meta name="twitter:description" content="We build your new homepage first, free. You decide if it's worth paying for.">
+<meta name="twitter:image" content="https://getjaviaventures.com/og.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Javia Ventures",
+  "url": "https://getjaviaventures.com/",
+  "logo": "https://getjaviaventures.com/logo-dark.png",
+  "image": "https://getjaviaventures.com/og.png",
+  "email": "jayaprakash@getjaviaventures.com",
+  "description": "Websites for US roofing contractors. Free homepage demo before you pay.",
+  "areaServed": {"@type": "Country", "name": "United States"},
+  "address": {"@type": "PostalAddress", "addressLocality": "Tiruchirappalli", "addressRegion": "Tamil Nadu", "addressCountry": "IN"},
+  "founder": {"@type": "Person", "name": "Jayaprakash"},
+  "priceRange": "$1,500",
+  "makesOffer": [
+    {"@type": "Offer", "name": "Website build for roofing contractors", "price": "1500", "priceCurrency": "USD"},
+    {"@type": "Offer", "name": "Website care plan", "price": "249", "priceCurrency": "USD"}
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -163,6 +198,19 @@
   .work li p{font-size:15.5px;color:var(--ink)}
   .work .wlink{display:inline-block;margin-top:8px;font-size:15px;font-weight:600}
 
+
+  .promises{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-top:22px;max-width:520px}
+  .promises li{position:relative;padding-left:24px;font-size:14.5px;color:var(--ink)}
+  .promises li::before{content:"";position:absolute;left:3px;top:6px;width:11px;height:6px;border-left:2.5px solid var(--chalk);border-bottom:2.5px solid var(--chalk);transform:rotate(-45deg)}
+  .founder{display:flex;gap:16px;align-items:center;margin:4px 0 22px}
+  .founder .av{flex:none;width:64px;height:64px;border-radius:50%;background:var(--chalk-soft);display:grid;place-items:center;font:800 26px var(--head);color:var(--chalk-d);overflow:hidden}
+  .founder .av img{width:100%;height:100%;object-fit:cover}
+  .founder b{display:block;font-size:17px}
+  .founder span{color:var(--muted);font-size:14.5px}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap}
+  footer a{color:var(--muted)}
+  @media (max-width:640px){.promises{grid-template-columns:1fr}}
+
   /* who + faq */
   .who .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px}
   .who p{margin-bottom:16px;max-width:52ch}
@@ -246,6 +294,12 @@
         <a class="btn line" href="sample/">See a sample</a>
       </div>
       <small>Free demo in 48 hours. No card, no call required.</small>
+      <ul class="promises">
+        <li>See your homepage before you pay</li>
+        <li>You own the site and the domain</li>
+        <li>Half to start, half at launch</li>
+        <li>Replies within one US business day</li>
+      </ul>
     </div>
 
     <div class="ba" style="--split:20%">
@@ -391,7 +445,7 @@
       <li>
         <a class="wshot" href="https://www.racksmadurai.com" target="_blank" rel="noopener" aria-label="Open AK Racks Madurai website">
           <div class="wbar"><i></i><i></i><i></i></div>
-          <div class="wimg"><img src="work/racks.jpg" alt="Homepage of AK Racks Madurai" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">racksmadurai.com</span></div>
+          <div class="wimg"><img src="work/racks.jpg" alt="Homepage of AK Racks Madurai" width="800" height="500" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">racksmadurai.com</span></div>
         </a>
         <h3>AK Racks Madurai</h3>
         <div class="wplace">Rack manufacturer, Madurai</div>
@@ -401,7 +455,7 @@
       <li>
         <a class="wshot" href="https://vpresidencyperambalur.in/" target="_blank" rel="noopener" aria-label="Open VP Residency website">
           <div class="wbar"><i></i><i></i><i></i></div>
-          <div class="wimg"><img src="work/vpresidency.jpg" alt="Homepage of VP Residency" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">vpresidencyperambalur.in</span></div>
+          <div class="wimg"><img src="work/vpresidency.jpg" alt="Homepage of VP Residency" width="800" height="500" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">vpresidencyperambalur.in</span></div>
         </a>
         <h3>VP Residency</h3>
         <div class="wplace">Hotel, Perambalur</div>
@@ -411,7 +465,7 @@
       <li>
         <a class="wshot" href="https://www.vksweddingevents.in/" target="_blank" rel="noopener" aria-label="Open VKS Wedding Events website">
           <div class="wbar"><i></i><i></i><i></i></div>
-          <div class="wimg"><img src="work/vks.jpg" alt="Homepage of VKS Wedding Events" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">vksweddingevents.in</span></div>
+          <div class="wimg"><img src="work/vks.jpg" alt="Homepage of VKS Wedding Events" width="800" height="500" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">vksweddingevents.in</span></div>
         </a>
         <h3>VKS Wedding Events</h3>
         <div class="wplace">Event decorators, Trichy</div>
@@ -421,7 +475,7 @@
       <li>
         <a class="wshot" href="https://jayple.in/" target="_blank" rel="noopener" aria-label="Open Jayple website">
           <div class="wbar"><i></i><i></i><i></i></div>
-          <div class="wimg"><img src="work/jayple.jpg" alt="Homepage of Jayple" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">jayple.in</span></div>
+          <div class="wimg"><img src="work/jayple.jpg" alt="Homepage of Jayple" width="800" height="500" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">jayple.in</span></div>
         </a>
         <h3>Jayple</h3>
         <div class="wplace">Salon booking app, Trichy</div>
@@ -431,7 +485,7 @@
       <li>
         <a class="wshot" href="https://idealneetacademy.in/" target="_blank" rel="noopener" aria-label="Open Ideal NEET Academy website">
           <div class="wbar"><i></i><i></i><i></i></div>
-          <div class="wimg"><img src="work/idealneet.jpg" alt="Homepage of Ideal NEET Academy" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">idealneetacademy.in</span></div>
+          <div class="wimg"><img src="work/idealneet.jpg" alt="Homepage of Ideal NEET Academy" width="800" height="500" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">idealneetacademy.in</span></div>
         </a>
         <h3>Ideal NEET Academy</h3>
         <div class="wplace">Coaching institute, Trichy</div>
@@ -441,7 +495,7 @@
       <li>
         <a class="wshot" href="https://www.bhaibiryanigodown.in/" target="_blank" rel="noopener" aria-label="Open Bhai Biryani Godown website">
           <div class="wbar"><i></i><i></i><i></i></div>
-          <div class="wimg"><img src="work/bhaibiryani.jpg" alt="Homepage of Bhai Biryani Godown" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">bhaibiryanigodown.in</span></div>
+          <div class="wimg"><img src="work/bhaibiryani.jpg" alt="Homepage of Bhai Biryani Godown" width="800" height="500" loading="lazy" onerror="this.closest('.wshot').classList.add('noimg')"><span class="wph">bhaibiryanigodown.in</span></div>
         </a>
         <h3>Bhai Biryani Godown</h3>
         <div class="wplace">Restaurant, 3 locations</div>
@@ -456,6 +510,10 @@
   <div class="wrap">
     <div>
       <div class="sh" style="margin-bottom:24px"><h2>Who you'd work with</h2></div>
+      <div class="founder">
+        <div class="av"><img src="jayaprakash.jpg" alt="Jayaprakash, founder of Javia Ventures" width="64" height="64" onerror="var p=this.parentNode;p.textContent='J'"></div>
+        <div><b>Jayaprakash</b><span>Founder, Javia Ventures · <a href="mailto:jayaprakash@getjaviaventures.com">jayaprakash@getjaviaventures.com</a></span></div>
+      </div>
       <p>Javia Ventures is a small web studio run by Jayaprakash. We've built websites, apps and marketing for hotels, restaurants, manufacturers, event companies and schools, and now focus on one trade: roofing.</p>
       <p>Our team works from India, which is how we keep pricing fair. You'll deal with the same person from demo to launch, by email or a scheduled call, and get a reply within one US business day.</p>
     </div>
@@ -482,9 +540,10 @@
       <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
       <div><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
       <div class="full"><label for="f-site">Current website or city (optional)</label><input id="f-site" name="website" placeholder="e.g. lonestarroofing.com or Dallas, TX"></div>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
       <div class="full"><button class="btn" type="submit">Send me my free demo</button></div>
       <p class="formmsg" id="formMsg" role="status" aria-live="polite"></p>
-      <small>We only use your details to send your demo. No newsletters.</small>
+      <small>We only use your details to send your demo. No newsletters. <a href="privacy/">Privacy policy</a></small>
     </form>
   </div>
 </section>
@@ -492,8 +551,8 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Javia Ventures</span>
-    <span><a href="mailto:jayaprakash@getjaviaventures.com" id="mailLink">jayaprakash@getjaviaventures.com</a></span>
+    <span>© 2026 Javia Ventures · Tiruchirappalli, Tamil Nadu, India</span>
+    <span class="foot-links"><a href="mailto:jayaprakash@getjaviaventures.com" id="mailLink">jayaprakash@getjaviaventures.com</a><a href="privacy/">Privacy</a></span>
   </div>
 </footer>
 
@@ -501,7 +560,7 @@
   // ---- Settings: change after you buy the domain ----
   const CONTACT_EMAIL = "jayaprakash@getjaviaventures.com";
   // Optional: paste a Formspree endpoint (formspree.io, free) to receive forms without opening email.
-  const FORM_ENDPOINT = "";
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/" + CONTACT_EMAIL;
 
   document.getElementById("mailLink").href = "mailto:" + CONTACT_EMAIL;
   document.getElementById("mailLink").textContent = CONTACT_EMAIL;
@@ -532,7 +591,10 @@
     msg.style.color = "";
     if (FORM_ENDPOINT) {
       try {
-        const r = await fetch(FORM_ENDPOINT, {method: "POST", headers: {"Accept": "application/json"}, body: new FormData(form)});
+        const fd = new FormData(form);
+        fd.append("_subject", "Free demo request: " + d.company);
+        fd.append("_template", "table");
+        const r = await fetch(FORM_ENDPOINT, {method: "POST", headers: {"Accept": "application/json"}, body: fd});
         if (!r.ok) throw new Error();
         form.reset();
         msg.textContent = "Request sent. Your demo link will arrive within 48 hours.";
