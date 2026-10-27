@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Elite Roofing LLC | Roof Repair &amp; Replacement in Austin</title>
+<meta name="description" content="Elite Roofing LLC handles roof repair, replacement and storm damage in Austin. Free inspections.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0f1720;--slate:#1c2733;--muted:#5b6774;--line:#e3e7ec;--paper:#f6f4ef;--amber:#f2a516;--amber-d:#c9850a;--white:#fff}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+  h1,h2,h3{font-family:Archivo,Inter,sans-serif;line-height:1.1;letter-spacing:-.01em}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .concept{background:var(--ink);color:#c9d2db;font-size:13px;text-align:center;padding:8px 16px}
+  .concept b{color:var(--amber)}
+  header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+  .logo{font-family:Archivo,Inter,system-ui,sans-serif;font-weight:800;font-size:20px;display:flex;align-items:center;gap:10px}
+  .logo svg{flex:none}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--ink);font-weight:600;text-decoration:none;padding:13px 22px;border-radius:6px;border:0;font-size:16px;cursor:pointer}
+  .btn:hover{background:var(--amber-d)}
+  .btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.35);color:#fff}
+  .nav .btn{padding:10px 16px;font-size:15px}
+  .hero{background:linear-gradient(160deg,var(--slate) 0%,var(--ink) 70%);color:#fff;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:auto -10% -1px -10%;height:140px;background:var(--paper);clip-path:polygon(0 100%,50% 18%,100% 100%)}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;padding-top:72px;padding-bottom:150px;position:relative;z-index:1}
+  .eyebrow{color:var(--amber);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+  .hero h1{font-size:clamp(34px,5vw,56px);font-weight:800;margin-bottom:18px}
+  .hero p.lead{font-size:19px;color:#c9d2db;max-width:560px;margin-bottom:28px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+  .rating{display:flex;align-items:center;gap:10px;font-size:15px;color:#c9d2db}
+  .stars{color:var(--amber);letter-spacing:2px;font-size:18px}
+  .card{background:var(--white);color:var(--ink);border-radius:10px;padding:26px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+  .card h3{font-size:22px;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:14px;margin-bottom:16px}
+  .card label{display:block;font-size:13px;font-weight:600;margin:10px 0 4px}
+  .card input,.card select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:6px;font:inherit}
+  .card .btn{width:100%;justify-content:center;margin-top:16px}
+  .card small{display:block;color:var(--muted);font-size:12px;margin-top:10px;text-align:center}
+  section{padding:72px 0}
+  .sec-h{max-width:640px;margin-bottom:36px}
+  .sec-h h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:10px}
+  .sec-h p{color:var(--muted);font-size:17px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .svc{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:24px;border-top:4px solid var(--amber)}
+  .svc h3{font-size:19px;margin-bottom:8px}
+  .svc p{color:var(--muted);font-size:15px}
+  .trust{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .trust .grid{grid-template-columns:repeat(3,1fr)}
+  .tp{display:flex;gap:14px}
+  .tp .ic{flex:none;width:44px;height:44px;border-radius:50%;background:var(--paper);display:grid;place-items:center;color:var(--amber-d);font-weight:800;font-family:Archivo}
+  .tp h3{font-size:18px;margin-bottom:4px}
+  .tp p{color:var(--muted);font-size:15px}
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .step{position:relative;padding:24px 24px 24px 72px;background:var(--white);border-radius:10px;border:1px solid var(--line)}
+  .step::before{counter-increment:s;content:counter(s);position:absolute;left:22px;top:22px;width:34px;height:34px;border-radius:6px;background:var(--ink);color:var(--amber);display:grid;place-items:center;font-family:Archivo,Inter,system-ui,sans-serif;font-weight:800}
+  .step h3{font-size:18px;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:15px}
+  .band{background:var(--amber);padding:48px 0}
+  .band .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .band h2{font-size:clamp(24px,3vw,34px)}
+  .band .btn{background:var(--ink);color:#fff}
+  footer{background:var(--ink);color:#9aa6b2;padding:36px 0 96px;font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer b{color:#fff}
+  .callbar{display:none}
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;padding-top:48px}
+    .grid{grid-template-columns:1fr 1fr}
+    .trust .grid,.steps{grid-template-columns:1fr}
+    .nav .btn span{display:none}
+  }
+  @media (max-width:560px){
+    .grid{grid-template-columns:1fr}
+    .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9;background:var(--ink);padding:10px 12px;gap:10px}
+    .callbar a{flex:1;justify-content:center}
+  }
+</style>
+</head>
+<body>
+<div class="concept">Website concept prepared for <b>Elite Roofing LLC</b> by Javia Ventures · Preview only, not a live site</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">
+      <svg width="32" height="28" viewBox="0 0 32 28" aria-hidden="true"><path d="M2 14 16 2l14 12" fill="none" stroke="#f2a516" stroke-width="3.5" stroke-linejoin="round"/><path d="M7 13v13h18V13" fill="none" stroke="#0f1720" stroke-width="3"/></svg>
+      Elite Roofing LLC
+    </div>
+    <a class="btn" href="tel:5123797663">📞 <span>(512) 379-7663</span></a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Roofing in Austin</div>
+      <h1>A roof you can stop worrying about</h1>
+      <p class="lead">Repairs, full replacements and storm damage help for Austin homeowners, with a clear quote before any work starts.</p>
+      <div class="cta-row">
+        <a class="btn" href="#quote">Get a free quote</a>
+        <a class="btn ghost" href="tel:5123797663">Call (512) 379-7663</a>
+      </div>
+      
+      <div class="rating"><span class="stars">★★★★★</span><span><b style="color:#fff">4.9</b> from 291 Google reviews</span></div>
+      
+    </div>
+    <form class="card" id="quote" onsubmit="event.preventDefault();this.querySelector('button').textContent='✓ Request received (demo)'">
+      <h3>Book a free roof inspection</h3>
+      <p>Tell us what&#39;s going on and we&#39;ll call you back.</p>
+      <label>Name</label><input placeholder="Your name">
+      <label>Phone</label><input placeholder="(555) 123-4567">
+      <label>What do you need?</label>
+      <select><option>Roof repair</option><option>Roof replacement</option><option>Storm damage</option><option>Gutters</option><option>Not sure yet</option></select>
+      <button class="btn" type="submit">Get a free quote</button>
+      <small>We reply fast. No obligation.</small>
+    </form>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-h"><h2>What we do</h2><p>From a single leak to a full tear-off.</p></div>
+    <div class="grid">
+      <div class="svc"><h3>Roof repair</h3><p>Leaks, missing shingles and flashing fixed before they spread.</p></div><div class="svc"><h3>Roof replacement</h3><p>Full tear-off and new roof, cleaned up the same day.</p></div><div class="svc"><h3>Storm damage</h3><p>Hail and wind inspections, with photos you can send your insurer.</p></div><div class="svc"><h3>Gutters</h3><p>New gutters and guards that move water away from your home.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="sec-h"><h2>Why homeowners call us</h2></div>
+    <div class="grid">
+      <div class="tp"><div class="ic">1</div><div><h3>Clear quotes</h3><p>You see the price and the plan before anything starts.</p></div></div><div class="tp"><div class="ic">2</div><div><h3>Local crew</h3><p>We work in Austin and the surrounding area.</p></div></div><div class="tp"><div class="ic">3</div><div><h3>Proven by neighbors</h3><p>Rated 4.9 by 291 customers on Google.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-h"><h2>How it works</h2><p>Three simple steps.</p></div>
+    <div class="steps">
+      <div class="step"><h3>Free inspection</h3><p>We check the roof and show you photos.</p></div><div class="step"><h3>Written quote</h3><p>A clear price and timeline, no pressure.</p></div><div class="step"><h3>Done right</h3><p>We do the work and clean up after.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <h2>Worried about your roof? Let&#39;s take a look.</h2>
+    <a class="btn" href="#quote">Get a free quote</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div><b>Elite Roofing LLC</b><br>7500 Rialto Blvd #250, Austin, TX 78735, USA</div>
+    <div>Concept by Javia Ventures · jayaprakash@getjaviaventures.com</div>
+  </div>
+</footer>
+
+
+<div class="callbar">
+  <a class="btn" href="tel:5123797663">📞 Call now</a>
+  <a class="btn ghost" href="#quote">Free quote</a>
+</div>
+
+</body>
+</html>
