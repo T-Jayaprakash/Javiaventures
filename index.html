@@ -589,23 +589,32 @@
       return;
     }
     msg.style.color = "";
+    const body = `Name: ${d.name}\nCompany: ${d.company}\nEmail: ${d.email}\nPhone: ${d.phone || "-"}\nWebsite/city: ${d.website || "-"}`;
+    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Free demo request: " + d.company)}&body=${encodeURIComponent(body)}`;
     if (FORM_ENDPOINT) {
+      msg.textContent = "Sending...";
       try {
         const fd = new FormData(form);
         fd.append("_subject", "Free demo request: " + d.company);
         fd.append("_template", "table");
-        const r = await fetch(FORM_ENDPOINT, {method: "POST", headers: {"Accept": "application/json"}, body: fd});
-        if (!r.ok) throw new Error();
+        const r = await fetch(FORM_ENDPOINT, {method: "POST", headers: {"Accept": "application/json"}, body: fd, signal: AbortSignal.timeout(12000)});
+        // The endpoint can answer 200 with success:false (e.g. activation pending), so check the body too.
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok || String(j.success) === "false") throw new Error();
         form.reset();
         msg.textContent = "Request sent. Your demo link will arrive within 48 hours.";
       } catch {
+        // Never lose the lead: keep the form filled in and hand off to email with the details ready.
         msg.style.color = "#B42318";
-        msg.textContent = "That didn't go through. Email us at " + CONTACT_EMAIL + " instead.";
+        msg.textContent = "That didn't go through. ";
+        const a = document.createElement("a");
+        a.href = mailto;
+        a.textContent = "Tap here to email your request";
+        msg.append(a, " (your details are filled in), or write to " + CONTACT_EMAIL + ".");
       }
       return;
     }
-    const body = `Name: ${d.name}\nCompany: ${d.company}\nEmail: ${d.email}\nPhone: ${d.phone || "-"}\nWebsite/city: ${d.website || "-"}`;
-    location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Free demo request: " + d.company)}&body=${encodeURIComponent(body)}`;
+    location.href = mailto;
     msg.textContent = "Your email app opened with the request filled in. Press send and we'll get started.";
   });
 </script>
