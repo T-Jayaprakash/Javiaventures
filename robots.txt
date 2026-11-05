@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: /demo/
 Disallow: /sample/
+Disallow: /tools/
 
 Sitemap: https://getjaviaventures.com/sitemap.xml

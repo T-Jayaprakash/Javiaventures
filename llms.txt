@@ -1,0 +1,14 @@
+# Javia Ventures
+
+> Website, mobile app and custom software development company in Trichy (Tiruchirappalli), Tamil Nadu, India. Also builds AI systems, automation and bots. Founded by Jayaprakash. Phone and WhatsApp: +91 97889 95924.
+
+## Pages
+- [Services and prices](https://getjaviaventures.com/services/): 76 services with published starting prices
+- [Website development](https://getjaviaventures.com/services/website-development/)
+- [Mobile app development](https://getjaviaventures.com/services/mobile-app-development/)
+- [Custom software](https://getjaviaventures.com/services/custom-software-development/)
+- [AI development](https://getjaviaventures.com/services/ai-development/)
+- [Our work](https://getjaviaventures.com/work/)
+- [Jayple salon booking app](https://getjaviaventures.com/work/jayple/)
+- [Jeya Hyper Store app](https://getjaviaventures.com/work/jeya-hyper-store/)
+- [Contact](https://getjaviaventures.com/contact/)

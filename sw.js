@@ -1,7 +1,7 @@
-// Javia app shell. Only the home page and its own assets are handled here;
-// /roofing/, /demo/, /sample/ and /privacy/ always go straight to the network.
-const CACHE = "javia-v2";
-const SHELL = ["/", "/manifest.webmanifest", "/logo-light.png", "/icon-192.png", "/jayaprakash.jpg",
+// Javia app shell. Only the main pages and their assets are handled here;
+// everything else, including /roofing/ and /demo/, goes straight to the network.
+const CACHE = "javia-v3";
+const SHELL = ["/", "/services/", "/work/", "/contact/", "/manifest.webmanifest", "/logo-light.png", "/icon-192.png", "/jayaprakash.jpg",
   "/work/racks.jpg", "/work/vpresidency.jpg", "/work/vks.jpg", "/work/jayple.jpg", "/work/idealneet.jpg", "/work/bhaibiryani.jpg"];
 
 self.addEventListener("install", (e) => {
