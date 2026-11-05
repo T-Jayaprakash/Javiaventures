@@ -1,14 +1,14 @@
 {
   "name": "Javia Ventures",
   "short_name": "Javia",
-  "description": "Javia Kadai: websites, apps, software, AI and bots from Trichy.",
+  "description": "Websites, mobile apps, software, AI and automation from Javia Ventures.",
   "id": "/",
   "start_url": "/?source=app",
   "scope": "/",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#1E6BE6",
-  "theme_color": "#1E6BE6",
+  "background_color": "#171A1F",
+  "theme_color": "#171A1F",
   "lang": "en-IN",
   "categories": ["business", "productivity"],
   "icons": [
@@ -17,7 +17,7 @@
     {"src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
   ],
   "shortcuts": [
-    {"name": "Items and prices", "url": "/#items"},
-    {"name": "WhatsApp Javia", "url": "/#talk"}
+    {"name": "Services and prices", "url": "/#services"},
+    {"name": "Contact", "url": "/#contact"}
   ]
 }
