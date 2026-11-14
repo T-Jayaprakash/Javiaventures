@@ -1,6 +1,6 @@
 // Javia app shell. Only the main pages and their assets are handled here;
 // everything else, including /roofing/ and /demo/, goes straight to the network.
-const CACHE = "javia-v3";
+const CACHE = "javia-v4";
 const SHELL = ["/", "/services/", "/work/", "/contact/", "/manifest.webmanifest", "/logo-light.png", "/icon-192.png", "/jayaprakash.jpg",
   "/work/racks.jpg", "/work/vpresidency.jpg", "/work/vks.jpg", "/work/jayple.jpg", "/work/idealneet.jpg", "/work/bhaibiryani.jpg"];
 
