@@ -419,7 +419,7 @@ dialog[open]{animation:slide .28s cubic-bezier(.2,.8,.2,1)}
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://getjaviaventures.com/#site","url":"https://getjaviaventures.com/","name":"Javia Ventures","publisher":{"@id":"https://getjaviaventures.com/#org"}},{"@type":["Organization","ProfessionalService"],"@id":"https://getjaviaventures.com/#org","name":"Javia Ventures","url":"https://getjaviaventures.com/","logo":"https://getjaviaventures.com/logo-dark.png","image":"https://getjaviaventures.com/og-home.png","telephone":"+919788995924","email":"jayaprakash@getjaviaventures.com","address":{"@type":"PostalAddress","addressLocality":"Tiruchirappalli","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":["Tiruchirappalli","Tamil Nadu","India"],"founder":{"@type":"Person","name":"Jayaprakash"},"description":"Website, mobile app and custom software development company in Trichy, Tamil Nadu. Also builds AI systems, automation and bots.","knowsAbout":["Website development","Mobile app development","Custom software development","CRM development","AI development","Business automation","Bot development"]}]}</script></head>
 <body data-r="{&quot;page&quot;:&quot;home&quot;}">
 <div class="notice" id="notice" hidden=""><div class="wrap"><span id="noticeText"></span><time id="noticeClock"></time></div></div>
-<div class="usnote" id="usNote" hidden="">US roofing contractor? <a href="/roofing/">See our roofing page</a></div>
+<div class="usnote" id="usNote" hidden="">Agency in the US, UK, Canada or Australia? <a href="/partners/">See how we build apps for agencies</a></div>
 
 <header class="top dark">
   <div class="wrap">
@@ -524,7 +524,7 @@ dialog[open]{animation:slide .28s cubic-bezier(.2,.8,.2,1)}
       <div><p class="label">About</p><h2 class="title" style="margin-top:10px">About Javia Ventures</h2></div>
       <div>
         <p class="lede">Javia Ventures is a software development company in Trichy (Tiruchirappalli), Tamil Nadu, founded by Jayaprakash. We build websites, Android and iOS apps, custom business software, CRMs, AI systems, automation and bots.</p>
-        <p style="margin-top:14px;color:var(--muted)">Our clients include manufacturers, hotels, restaurants, supermarkets, event companies and coaching institutes across Tamil Nadu. We also build for US roofing contractors. You deal directly with the people building your product, from the first call to launch and after.</p>
+        <p style="margin-top:14px;color:var(--muted)">Our clients include manufacturers, hotels, restaurants, supermarkets, event companies and coaching institutes across Tamil Nadu. We also build mobile apps for agencies in the US, UK, Canada and Australia, under their brand. You deal directly with the people building your product, from the first call to launch and after.</p>
         <div class="acts" style="margin-top:20px"><a class="arrowlink" href="/services/">All services →</a></div>
       </div>
     </div>
@@ -567,6 +567,9 @@ dialog[open]{animation:slide .28s cubic-bezier(.2,.8,.2,1)}
 <!-- CASE STUDY -->
 
 
+<!-- PARTNERS -->
+
+
 <!-- CONTACT -->
 
 </main>
@@ -574,7 +577,7 @@ dialog[open]{animation:slide .28s cubic-bezier(.2,.8,.2,1)}
 <footer class="bot dark"><div class="wrap ft">
   <div class="ftb"><b>Javia Ventures</b><span>Website, app and software development company</span><span>Trichy (Tiruchirappalli), Tamil Nadu, India</span><a href="tel:+919788995924">+91 97889 95924</a><a href="mailto:jayaprakash@getjaviaventures.com">jayaprakash@getjaviaventures.com</a></div>
   <nav aria-label="Services"><b>Services</b><div id="ftServices"><a href="/services/website-development/">Website Development</a><a href="/services/mobile-app-development/">Mobile Application Development</a><a href="/services/custom-software-development/">Custom Software Development</a><a href="/services/crm-development/">CRM &amp; Business Management</a><a href="/services/ai-development/">AI Development &amp; Integration</a><a href="/services/business-automation/">Workflow &amp; Business Automation</a><a href="/services/bot-development/">Bot Development</a><a href="/services/backend-api-cloud/">Backend, API &amp; Cloud Solutions</a><a href="/services/maintenance-support/">Monthly Maintenance &amp; Support</a></div></nav>
-  <nav aria-label="Work"><b>Work</b><a href="/work/jayple/">Jayple app</a><a href="/work/jeya-hyper-store/">Jeya Hyper Store app</a><a href="/work/">All projects</a><a href="/roofing/">US roofing websites</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a></nav>
+  <nav aria-label="Work"><b>Work</b><a href="/work/jayple/">Jayple app</a><a href="/work/jeya-hyper-store/">Jeya Hyper Store app</a><a href="/work/">All projects</a><a href="/partners/">App partner for agencies</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a></nav>
   <p class="ftc">© 2026 Javia Ventures</p>
 </div></footer>
 
@@ -917,7 +920,7 @@ function inst(){const t=$("#instText");if(!t)return;if(standalone){$("#inst").hi
 addEventListener("beforeinstallprompt",e=>{e.preventDefault();bip=e;if($("#instBtn"))$("#instBtn").hidden=false;inst()});
 if($("#instBtn"))$("#instBtn").addEventListener("click",async()=>{if(!bip)return;bip.prompt();await bip.userChoice.catch(()=>{});bip=null;$("#instBtn").hidden=true;inst()});
 if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{}));
-try{if((Intl.DateTimeFormat().resolvedOptions().timeZone||"").startsWith("America/"))$("#usNote").hidden=false}catch(e){}
+try{const z=Intl.DateTimeFormat().resolvedOptions().timeZone||"";if(R.page!=="partners"&&/^(America\/|Europe\/London|Australia\/)/.test(z))$("#usNote").hidden=false}catch(e){}
 
 /* ---------- Start ---------- */
 try{localStorage.removeItem("box")}catch(e){}

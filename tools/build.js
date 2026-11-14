@@ -12,6 +12,7 @@ const routes=[
  {u:'/work/',r:{page:'work'},t:'Our Apps and Websites | Javia Ventures',d:'Real work by Javia Ventures: the Jayple salon booking app, the Jeya Hyper Store ordering app and websites for businesses across Tamil Nadu.',ld:[crumb([["Home","/"],["Work","/work/"]])]},
  {u:'/work/jayple/',r:{page:'case',app:'jayple'},t:'Jayple Salon Booking App Case Study | Javia Ventures',d:'Jayple is a salon discovery and booking app for Trichy, on the web, Android and iPhone. Built and run by the team behind Javia Ventures.',ld:[crumb([["Home","/"],["Work","/work/"],["Jayple","/work/jayple/"]]),{"@type":"SoftwareApplication",name:"Jayple",applicationCategory:"LifestyleApplication",operatingSystem:"Web, Android, iOS",url:"https://customer.jayple.in/",downloadUrl:"https://play.google.com/store/apps/details?id=com.jayple.app"}]},
  {u:'/work/jeya-hyper-store/',r:{page:'case',app:'jeya'},t:'Jeya Hyper Store Supermarket App Case Study | Javia Ventures',d:'An online ordering app for a neighbourhood supermarket in Trichy, built by Javia Ventures. Try the live app.',ld:[crumb([["Home","/"],["Work","/work/"],["Jeya Hyper Store","/work/jeya-hyper-store/"]]),{"@type":"WebApplication",name:"Jeya Hyper Store",applicationCategory:"ShoppingApplication",operatingSystem:"Web",url:"https://jeyahyperstore.in/"}]},
+ {u:'/partners/',r:{page:'partners'},t:'White-Label App Development Partner for Agencies | Javia Ventures',d:'iPhone and Android apps built under your agency brand. Send a brief, get a fixed quote in two working days. Makers of the Jayple app.',ld:[crumb([["Home","/"],["App partner for agencies","/partners/"]]),{"@type":"Service",name:"White-label mobile app development for agencies",provider:{"@id":SITE+"/#org"},areaServed:["United States","United Kingdom","Canada","Australia"],url:SITE+"/partners/"}]},
  {u:'/contact/',r:{page:'contact'},t:'Contact Javia Ventures, Trichy | +91 97889 95924',d:'Call or WhatsApp Javia Ventures in Trichy on +91 97889 95924 about your website, app, software or AI project.',ld:[crumb([["Home","/"],["Contact","/contact/"]]),{"@type":"ContactPage",url:SITE+"/contact/",about:{"@id":SITE+"/#org"}}]},
  ...Object.entries(CAT).map(([id,[s,t,d]])=>({u:`/services/${s}/`,r:{page:'services',cat:id},t,d,faq:1,cat:id,ld:[crumb([["Home","/"],["Services","/services/"],[t.split(' | ')[0],`/services/${s}/`]])]})),
 ];
@@ -45,6 +46,6 @@ const srv=http.createServer((q,s)=>{let p=path.join(ROOT,decodeURIComponent(q.ur
   await c.close();
  }
  await b.close();srv.close();
- const all=[...urls.map((u,i)=>[u,u==='/'?'1.0':u.split('/').length>3?'0.7':'0.8']),['/roofing/','0.6'],['/privacy/','0.2']];
+ const all=[...urls.map((u,i)=>[u,u==='/'?'1.0':u.split('/').length>3?'0.7':'0.8']),['/privacy/','0.2']];
  fs.writeFileSync(path.join(ROOT,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${all.map(([u,p])=>`  <url><loc>${SITE}${u}</loc><lastmod>${TODAY}</lastmod><priority>${p}</priority></url>`).join('\n')}\n</urlset>\n`);
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -419,7 +419,7 @@ dialog[open]{animation:slide .28s cubic-bezier(.2,.8,.2,1)}
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://getjaviaventures.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://getjaviaventures.com/services/"},{"@type":"ListItem","position":3,"name":"Website and App Maintenance Plans","item":"https://getjaviaventures.com/services/maintenance-support/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is monthly maintenance & support priced?","acceptedAnswer":{"@type":"Answer","text":"Every project is quoted after we understand your requirements. Tell us what you need on WhatsApp or by phone and you get a clear quote and timeline before any work starts."}},{"@type":"Question","name":"What can Javia Ventures build for me?","acceptedAnswer":{"@type":"Answer","text":"Website Maintenance, E-commerce Maintenance, Mobile App Maintenance, Software Maintenance, CRM/ERP Support, AI Agent Monitoring & Maintenance, Cloud Infrastructure Management."}},{"@type":"Question","name":"Do you work with businesses outside Trichy?","acceptedAnswer":{"@type":"Answer","text":"Yes. We are based in Trichy, Tamil Nadu, and have clients in other towns such as Madurai and Perambalur. We work over WhatsApp, phone and email."}}]},{"@type":"Service","name":"Monthly Maintenance & Support","serviceType":"Monthly Maintenance & Support","provider":{"@id":"https://getjaviaventures.com/#org"},"areaServed":"India","url":"https://getjaviaventures.com/services/maintenance-support/","hasOfferCatalog":{"@type":"OfferCatalog","name":"Monthly Maintenance & Support","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Website Maintenance","description":"A monthly plan that keeps your website running, up to date and looked after."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"E-commerce Maintenance","description":"A monthly plan that keeps your online store running, up to date and looked after."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mobile App Maintenance","description":"A monthly plan that keeps your mobile app running, up to date and looked after."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Software Maintenance","description":"A monthly plan that keeps your software running, up to date and looked after."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"CRM/ERP Support","description":"A monthly plan that keeps your CRM or ERP running, up to date and looked after."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI Agent Monitoring & Maintenance","description":"A monthly plan that keeps your AI agents running, up to date and looked after."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cloud Infrastructure Management","description":"A monthly plan that keeps your cloud setup running, up to date and looked after."}}]}},{"@type":"Organization","@id":"https://getjaviaventures.com/#org","name":"Javia Ventures","url":"https://getjaviaventures.com/"}]}</script></head>
 <body data-r="{&quot;page&quot;:&quot;services&quot;,&quot;cat&quot;:&quot;care&quot;}">
 <div class="notice" id="notice" hidden=""><div class="wrap"><span id="noticeText"></span><time id="noticeClock"></time></div></div>
-<div class="usnote" id="usNote" hidden="">US roofing contractor? <a href="/roofing/">See our roofing page</a></div>
+<div class="usnote" id="usNote" hidden="">Agency in the US, UK, Canada or Australia? <a href="/partners/">See how we build apps for agencies</a></div>
 
 <header class="top dark">
   <div class="wrap">
@@ -477,6 +477,9 @@ dialog[open]{animation:slide .28s cubic-bezier(.2,.8,.2,1)}
 <!-- CASE STUDY -->
 
 
+<!-- PARTNERS -->
+
+
 <!-- CONTACT -->
 
 </main>
@@ -484,7 +487,7 @@ dialog[open]{animation:slide .28s cubic-bezier(.2,.8,.2,1)}
 <footer class="bot dark"><div class="wrap ft">
   <div class="ftb"><b>Javia Ventures</b><span>Website, app and software development company</span><span>Trichy (Tiruchirappalli), Tamil Nadu, India</span><a href="tel:+919788995924">+91 97889 95924</a><a href="mailto:jayaprakash@getjaviaventures.com">jayaprakash@getjaviaventures.com</a></div>
   <nav aria-label="Services"><b>Services</b><div id="ftServices"><a href="/services/website-development/">Website Development</a><a href="/services/mobile-app-development/">Mobile Application Development</a><a href="/services/custom-software-development/">Custom Software Development</a><a href="/services/crm-development/">CRM &amp; Business Management</a><a href="/services/ai-development/">AI Development &amp; Integration</a><a href="/services/business-automation/">Workflow &amp; Business Automation</a><a href="/services/bot-development/">Bot Development</a><a href="/services/backend-api-cloud/">Backend, API &amp; Cloud Solutions</a><a href="/services/maintenance-support/">Monthly Maintenance &amp; Support</a></div></nav>
-  <nav aria-label="Work"><b>Work</b><a href="/work/jayple/">Jayple app</a><a href="/work/jeya-hyper-store/">Jeya Hyper Store app</a><a href="/work/">All projects</a><a href="/roofing/">US roofing websites</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a></nav>
+  <nav aria-label="Work"><b>Work</b><a href="/work/jayple/">Jayple app</a><a href="/work/jeya-hyper-store/">Jeya Hyper Store app</a><a href="/work/">All projects</a><a href="/partners/">App partner for agencies</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a></nav>
   <p class="ftc">© 2026 Javia Ventures</p>
 </div></footer>
 
@@ -827,7 +830,7 @@ function inst(){const t=$("#instText");if(!t)return;if(standalone){$("#inst").hi
 addEventListener("beforeinstallprompt",e=>{e.preventDefault();bip=e;if($("#instBtn"))$("#instBtn").hidden=false;inst()});
 if($("#instBtn"))$("#instBtn").addEventListener("click",async()=>{if(!bip)return;bip.prompt();await bip.userChoice.catch(()=>{});bip=null;$("#instBtn").hidden=true;inst()});
 if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{}));
-try{if((Intl.DateTimeFormat().resolvedOptions().timeZone||"").startsWith("America/"))$("#usNote").hidden=false}catch(e){}
+try{const z=Intl.DateTimeFormat().resolvedOptions().timeZone||"";if(R.page!=="partners"&&/^(America\/|Europe\/London|Australia\/)/.test(z))$("#usNote").hidden=false}catch(e){}
 
 /* ---------- Start ---------- */
 try{localStorage.removeItem("box")}catch(e){}
